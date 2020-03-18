@@ -18,7 +18,15 @@ import static site.Data.WebElements.Operation_CV.WarehouseReceiveIn_button;
  * Created by Lena on 22.10.2019.
  */
 public class WarehouseReceiveIn extends TestBase {
+  //  @BeforeClass
+    public void Precondition(){
+        Integer row1 =(int)(Math.random()*8)+1;
+        String row = String.valueOf(row1);
+        System.out.print(row);
 
+        app.getOperationsCV_metods().create_WarehouseReceiveIn(row);
+
+    }
 
     @Test(priority=1,dataProviderClass = DataProviders.class, dataProvider = "createFileForNewClient")
     public void init(By locatorlanguage, String bookingType, String source, String jobType,
