@@ -15,21 +15,10 @@ public class PickupFromTerminal_Metods extends BasisMetods {
     }
 
     public void clickOnAddVehicles_button_InVehiclesGrid(){
-        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(PickupFromTerminal_WebElements.AddVehicles_button_VehiclesGrid);
     }
     public void selectVehicleFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(PickupFromTerminal_WebElements.VehiclesDropdownField);
         click(PickupFromTerminal_WebElements.VehicleElementInStaffDropdown);
 

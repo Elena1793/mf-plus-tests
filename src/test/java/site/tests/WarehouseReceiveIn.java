@@ -1,17 +1,21 @@
 package site.tests;
 
-
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
 import org.openqa.selenium.By;
-
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import site.Data.Resources.Units;
 import site.tests.TestManager.DataProviders;
 import site.tests.TestManager.TestBase;
+import org.testng.annotations.BeforeTest;
 
+import javax.annotation.Nonnull;
+import java.util.*;
 
 import static site.Data.WebElements.JobMenu_WebElements.Job_Operations_button;
 import static site.Data.WebElements.Operation_CV.New_Operation_button;
-
+import static site.Data.WebElements.Operation_CV.PickupFromTerminal_button;
 import static site.Data.WebElements.Operation_CV.WarehouseReceiveIn_button;
 
 /**
@@ -44,14 +48,17 @@ public class WarehouseReceiveIn extends TestBase {
         app.getJobGrid_Metods().click(New_Operation_button);
         app.getJobGrid_Metods().click(WarehouseReceiveIn_button);
         app.getJobGrid_Metods().waitForElementByNOTvisibility(By.xpath("//span[@class='spinner']"));
+
         app.getWarehouseReceiveIn_Metods().AddLoadUniteButton();
         app.getWarehouseReceiveIn_Metods().selectLoadUniteInLoadingUnitType_dropdown(new Units(locatorlanguage).getAirvan());
+
         app.getWarehouseReceiveIn_Metods().setNetVolumeInLoadUnitsGrid("100");
         app.getWarehouseReceiveIn_Metods().setGrossVolumeInLoadUnitsGrid("200");
         app.getWarehouseReceiveIn_Metods().setNetWeightInLoadUnitsGrid("300");
         app.getWarehouseReceiveIn_Metods().setGrossWeightInLoadUnitsGrid("400");
         app.getWarehouseReceiveIn_Metods().setLocationInLoadUnitsGrid();
         app.getWarehouseReceiveIn_Metods().clickOnSaveButtonInLoadUnitsGrid();
+
         app.getWarehouseReceiveIn_Metods().clickOnAddStaff_button();
         app.getWarehouseReceiveIn_Metods().selectStaffFromDropdownInPopup();
         app.getWarehouseReceiveIn_Metods().clickOnAddButtonOnAddStaffPopup();

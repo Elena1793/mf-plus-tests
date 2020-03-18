@@ -2,7 +2,9 @@ package site.tests;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import site.Data.Resources.JobType;
 import site.Data.WebElements.*;
 import site.tests.TestManager.DataProviders;
 import site.tests.TestManager.TestBase;
@@ -13,7 +15,11 @@ import static site.Data.Resources.GlobalResources.ScreensURL.Job_Grid;
  * Created by user on 20.05.2019.
  */
 public class CheckMenu extends TestBase implements UserMenu_WebElements, MainMenu_WebElements, ManagementScreen_WebElements,JobMenu_WebElements {
+   // @BeforeTest
+    public void Precondition(){
+        app.getLoginScreen_Metods().login("testuser4","testuser4");
 
+    }
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "changeLanguage")
 

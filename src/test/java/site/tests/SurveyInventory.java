@@ -1,13 +1,19 @@
 package site.tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 import site.Data.Resources.GlobalResources.ScreensURL;
 import site.Data.Resources.Item;
+import site.Data.Resources.Mode;
 import site.tests.TestManager.DataProviders;
 import site.tests.TestManager.TestBase;
+
 import java.io.File;
 import java.time.LocalTime;
+import java.util.*;
+import java.util.function.Predicate;
+
 import static site.Data.WebElements.MainMenu_WebElements.Management_button;
 import static site.Data.WebElements.Operation_CV.HomeButtonOnJobMenu;
 
@@ -114,6 +120,7 @@ public class SurveyInventory extends TestBase {
        app.getJobMenu_Metods().allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
         File attachFile = new File("src/test/resources/item.png");
        app.getSurvey_Metods().attachPhotoForItem(attachFile);
+      //  app.getSurvey_Metods().waitForElementByLeavingDOM(By.xpath("//div[@id='itemDetailsSection']//*[@id='spinner-itemDetails']"));
         try {
             Thread.sleep((long) 500.00);
         } catch (InterruptedException e) {
@@ -125,6 +132,11 @@ public class SurveyInventory extends TestBase {
        enterRoomNoteDetails("Details");
        clickOnCreateRommCondition();
        enterConditionBeforeDescription("before");
+
+     //  app.getSurvey_Metods().waitForElementByVisibility(By.xpath(""));
+        //app.getSurvey_Metods().type(By.xpath("//div[contains(@class,'col-lg-2')]//div[3]//textarea[@id='roomNoteDetails']"),"details");
+        //app.getSurvey_Metods().click(By.xpath("//textarea/../[@id=\"conditionBeforeDescription\"]"));
+        //app.getSurvey_Metods().type(By.xpath("//textarea/../[@id=\"conditionBeforeDescription\"]"),"before");
         app.getSurvey_Metods().attachFileByPath(By.xpath("//*[@id='roomBeforeUpload']"),attachFile);
         app.getSurvey_Metods().click(By.xpath("//*[@aria-owns=\"elementBefore_listbox\"]"));
         app.getSurvey_Metods().dropdownSelectElement("Walls",By.xpath("//ul[@id='elementBefore_listbox']/li"));

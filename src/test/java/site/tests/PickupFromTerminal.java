@@ -46,6 +46,7 @@ public class PickupFromTerminal extends TestBase {
         app.getPickupFromTerminal_Metods().clickOnAddTimeSheetButtonInTimesSheetWindow();
         app.getPickupFromTerminal_Metods().clickCloseButtonOnTimesSheetWindow();
         app.getPickupFromTerminal_Metods().clickOnStaffImportToExpenseButton();
+            app.getJobMenu_Metods().allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
         app.getPickupFromTerminal_Metods().clickOnAddVehicles_button_InVehiclesGrid();
         app.getPickupFromTerminal_Metods().selectVehicleFromDropdownInPopup();
         app.getPickupFromTerminal_Metods().clickOnAddButtonOnAddVehiclePopup();

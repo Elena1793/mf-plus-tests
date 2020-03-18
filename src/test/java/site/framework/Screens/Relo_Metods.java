@@ -14,20 +14,10 @@ public class Relo_Metods extends BasisMetods {
     }
 
     public void clickOnAddVehicles_button_InVehiclesGrid(){
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(Relo_WebElements.AddVehicles_button_VehiclesGrid);
     }
     public void selectVehicleFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(Relo_WebElements.VehiclesDropdownField);
         click(Relo_WebElements.VehicleElementInStaffDropdown);
 
@@ -162,20 +152,10 @@ public class Relo_Metods extends BasisMetods {
 
     public void clickOnAddEquipment_button_InEquipmentGrid(){
         waitForElementByVisibility(Relo_WebElements.AddEquipment_button_InEquipmentGrid);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(Relo_WebElements.AddEquipment_button_InEquipmentGrid);
     }
     public void selectEquipmentFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(Relo_WebElements.EquipmentDropdownField);
         click(Relo_WebElements.EquipmentElementInStaffDropdown);
 

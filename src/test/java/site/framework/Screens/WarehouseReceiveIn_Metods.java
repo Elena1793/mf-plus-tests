@@ -17,25 +17,20 @@ public class WarehouseReceiveIn_Metods  extends BasisMetods {
     }
 
     public void AddLoadUniteButton(){
-        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
+        waitForElementByNOTvisibility(By.xpath("//span[@class='spinner']"));
         try {
-            Thread.sleep(2000);
+            Thread.sleep((long) 4000.00);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         click(WarehouseReceiveIn_WebElements.AddLoadUnite_Button);
         try {
-            Thread.sleep(2000);
+            Thread.sleep((long) 2000.00);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
     public void selectLoadUniteInLoadingUnitType_dropdown(String unit){
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(By.xpath("//span[@aria-owns='LoadingUnitType_listbox']"));
         dropdownSelectElement( unit,By.xpath("//ul[@id='LoadingUnitType_listbox']/li"));
     }
@@ -99,21 +94,11 @@ public void clickOnSaveButtonInLoadUnitsGrid(){
 
 
     public void clickOnAddStaff_button() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(WarehouseReceiveIn_WebElements.AddStaff_button_StaffGrid);
     }
 
     public void selectStaffFromDropdownInPopup() {
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         click(WarehouseReceiveIn_WebElements.StaffDropdownField);
         click(WarehouseReceiveIn_WebElements.StaffElementInStaffDropdown);
     }

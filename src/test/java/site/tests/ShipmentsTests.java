@@ -32,15 +32,18 @@ public class ShipmentsTests extends TestBase{
         app.getShipments_Methods().setGrossWeightInShipmentUnitsGrid("200");
         app.getShipments_Methods().setLocationInShipmentUnitsGrid();
         app.getShipments_Methods().clickOnSaveButtonInLoadUnitsGrid();
-    //    clickOnCalendarIcon_ETD();
-   //     setNextDay_ETD();
-  //      clickOnCalendarIcon_ETD();
-  //      setPrevDay_ETD();
-       // clickOnCalendarIcon_ETD();
-      //  setCurrentDay_ETD();
 
-       String res= app.getShipments_Methods().getExistText(By.xpath("//td[@aria-selected='true']/a"));
-        System.out.println("============="+res);
+
+
+        app.getShipments_Methods().click(By.xpath("//*[@aria-controls='etd_dateview']"));
+        setNextDay();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        app.getShipments_Methods().click(By.xpath("//*[@aria-controls='etd_dateview']"));
+        setPrevDay();
       //  app.getShipments_Methods().click(By.xpath("//*[@aria-controls='etd_timeview']"));
        // app.getShipments_Methods(.getAtributExistTextByTitle()
 
@@ -48,47 +51,25 @@ public class ShipmentsTests extends TestBase{
       //  app.getShipments_Methods().click(By.xpath("//*[@aria-controls='eta_timeview']"));
     }
 
-    private void setCurrentDay_ETD() {
-        String str=app.getShipments_Methods().getAtributExistTextByTitle(By.xpath("//a[contains(@class,'k-link k-nav-today')]"));
-        String currentDate=str.split(" ")[2].split("\\,")[0];
-        app.getShipments_Methods().waitForElementByVisibility(By.xpath("//a[@class='k-link'][contains(text(),'"+currentDate+"')]"));
-        app.getShipments_Methods().click(By.xpath("//a[@class='k-link'][contains(text(),'"+currentDate+"')]"));
-    }
-
-    private void clickOnCalendarIcon_ETD() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        app.getShipments_Methods().click(By.xpath("//*[@aria-controls='etd_dateview']"));
-    }
-
-    private void setPrevDay_ETD() {
+    private void setPrevDay() {
         String str=app.getShipments_Methods().getAtributExistTextByTitle(By.xpath("//a[contains(@class,'k-link k-nav-today')]"));
         String st=str.split(" ")[2].split("\\,")[0];
         int res=Integer.parseInt(st)-1;
         String newDate=String.valueOf(res);
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        app.getShipments_Methods().waitForElementByClickable_Locator(By.xpath("//a[@class='k-link'][contains(text(),'"+newDate+"')]"));
+        System.out.println("date: "+res);
+        app.getShipments_Methods().waitForElementByVisibility(By.xpath("//a[@class='k-link'][contains(text(),'"+newDate+"')]"));
+        //  app.getShipments_Methods().click(By.xpath("//a[@class='k-link'][contains(text(),'"+res+"')]"));
         app.getShipments_Methods().click(By.xpath("//a[@class='k-link'][contains(text(),'"+st+"')]//../.././/a[@class='k-link'][contains(text(),'"+newDate+"')]"));
     }
 
-    private void setNextDay_ETD() {
+    private void setNextDay() {
         String str=app.getShipments_Methods().getAtributExistTextByTitle(By.xpath("//a[contains(@class,'k-link k-nav-today')]"));
         String st=str.split(" ")[2].split("\\,")[0];
         int res=Integer.parseInt(st)+1;
         String newDate=String.valueOf(res);
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        app.getShipments_Methods().waitForElementByClickable_Locator(By.xpath("//a[@class='k-link'][contains(text(),'"+newDate+"')]"));
+        System.out.println("date: "+res);
+        app.getShipments_Methods().waitForElementByVisibility(By.xpath("//a[@class='k-link'][contains(text(),'"+newDate+"')]"));
+        //  app.getShipments_Methods().click(By.xpath("//a[@class='k-link'][contains(text(),'"+res+"')]"));
         app.getShipments_Methods().click(By.xpath("//a[@class='k-link'][contains(text(),'"+st+"')]//../.././/a[@class='k-link'][contains(text(),'"+newDate+"')]"));
     }
 
