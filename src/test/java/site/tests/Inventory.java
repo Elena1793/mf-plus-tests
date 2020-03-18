@@ -1,33 +1,16 @@
 package site.tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+
 
 import org.testng.annotations.*;
-
 import java.io.File;
-import java.util.*;
-
-import site.Data.WebElements.SurveyInventory_WebElements;
 import site.tests.TestManager.DataProviders;
 import site.tests.TestManager.TestBase;
-
-import java.util.List;
-
 import static site.Data.WebElements.Inventory_WebElements.*;
-import static site.Data.WebElements.MainMenu_WebElements.MainMenu_List;
-
-
 
 public class Inventory extends TestBase {
 
-   // @BeforeTest
-    public void Precondition() {
-        app.getLoginScreen_Metods().login("testuser4", "testuser4");
-
-
-    }
 
    @Test(dataProviderClass = DataProviders.class,dataProvider = "createFileForNewClient")
 

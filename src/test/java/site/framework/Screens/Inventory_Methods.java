@@ -140,7 +140,7 @@ public class Inventory_Methods extends BasisMetods {
     public void selectAddedPieces() {
 
             try {
-                Thread.sleep((long) 500.00);
+                Thread.sleep((long) 1000.00);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

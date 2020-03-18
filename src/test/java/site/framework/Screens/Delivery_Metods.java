@@ -9,15 +9,27 @@ import site.framework.ApplicationManager.BasisMetods;
  * Created by Lena on 10.11.2019.
  */
 public class Delivery_Metods extends BasisMetods {
+
     public Delivery_Metods(WebDriver wd) {
         super(wd);
     }
 
     public void clickOnAddVehicles_button_InVehiclesGrid(){
+        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(Delivery_WebElements.AddVehicles_button_VehiclesGrid);
     }
     public void selectVehicleFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(Delivery_WebElements.VehiclesDropdownField);
         click(Delivery_WebElements.VehicleElementInStaffDropdown);
 
@@ -68,6 +80,7 @@ public class Delivery_Metods extends BasisMetods {
 
 
     public void clickOnAddStaff_button() {
+        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
         click(Delivery_WebElements.AddStaff_button_StaffGrid);
     }
 
@@ -82,6 +95,7 @@ public class Delivery_Metods extends BasisMetods {
     }
 
     public void selectStaffInStaffGrid() {
+        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
         click(Delivery_WebElements.StaffElementInStaffGrid);
     }
 
@@ -151,7 +165,13 @@ public class Delivery_Metods extends BasisMetods {
     }
 
     public void clickOnAddEquipment_button_InEquipmentGrid(){
+        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
         waitForElementByVisibility(Delivery_WebElements.AddEquipment_button_InEquipmentGrid);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(Delivery_WebElements.AddEquipment_button_InEquipmentGrid);
     }
     public void selectEquipmentFromDropdownInPopup(){

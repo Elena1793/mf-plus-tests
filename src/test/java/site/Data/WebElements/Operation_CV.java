@@ -16,6 +16,7 @@ public interface Operation_CV {
     By WarehouseReceiveIn_button=By.xpath("//li[@trans-type='Enum.TransactionType.WarehouseReceiveIn']");
     By WarehouseOutload_button=By.xpath("//li[@trans-type='Enum.TransactionType.WarehouseOutload']");
     By BoxDelivery_button=By.xpath("//li[@trans-type='Enum.TransactionType.BoxDelivery']");
+    By Relo_button=By.xpath("//li[@trans-type='Enum.TransactionType.Relo']");
 
     By HomeButtonOnJobMenu= By.xpath("//a[@class='job-menu__item small-font']");
 

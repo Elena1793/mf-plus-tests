@@ -309,7 +309,7 @@ public class BasisMetods implements UserMenu_WebElements{
        // System.out.println("existing"+existingText);
        // System.out.println("entering"+text);
         if (text != null&&!(text.equalsIgnoreCase(existingText)) ){
-                System.out.println(existingText);
+               // System.out.println(existingText);
                 Actions actionList = new Actions(wd);
                 actionList.doubleClick(wd.findElement(locator)).sendKeys(text).build().perform();
 

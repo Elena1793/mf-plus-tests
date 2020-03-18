@@ -14,10 +14,20 @@ public class BoxDelivery_Metods extends BasisMetods {
     }
 
     public void clickOnAddVehicles_button_InVehiclesGrid(){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(BoxDelivery_WebElements.AddVehicles_button_VehiclesGrid);
     }
     public void selectVehicleFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(BoxDelivery_WebElements.VehiclesDropdownField);
         click(BoxDelivery_WebElements.VehicleElementInStaffDropdown);
 
@@ -68,6 +78,11 @@ public class BoxDelivery_Metods extends BasisMetods {
 
 
     public void clickOnAddStaff_button() {
+        try {
+            Thread.sleep((long) 1000.00);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(BoxDelivery_WebElements.AddStaff_button_StaffGrid);
     }
 
@@ -152,10 +167,20 @@ public class BoxDelivery_Metods extends BasisMetods {
 
     public void clickOnAddEquipment_button_InEquipmentGrid(){
         waitForElementByVisibility(BoxDelivery_WebElements.AddEquipment_button_InEquipmentGrid);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(BoxDelivery_WebElements.AddEquipment_button_InEquipmentGrid);
     }
     public void selectEquipmentFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(BoxDelivery_WebElements.EquipmentDropdownField);
         click(BoxDelivery_WebElements.EquipmentElementInStaffDropdown);
 

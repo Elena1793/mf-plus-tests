@@ -1,7 +1,6 @@
 package site.tests;
 
 import org.openqa.selenium.By;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import site.tests.TestManager.DataProviders;
 import site.tests.TestManager.TestBase;
@@ -9,20 +8,13 @@ import site.tests.TestManager.TestBase;
 import static site.Data.WebElements.JobMenu_WebElements.Job_Operations_button;
 import static site.Data.WebElements.Operation_CV.BoxDelivery_button;
 import static site.Data.WebElements.Operation_CV.New_Operation_button;
-import static site.Data.WebElements.Operation_CV.WarehouseReceiveIn_button;
+
 
 /**
  * Created by Lena on 22.10.2019.
  */
 public class BoxDelivery extends TestBase {
-  //  @BeforeClass
-    public void Precondition(){
-        Integer row1 =(int)(Math.random()*8)+1;
-        String row = String.valueOf(row1);
-        System.out.print(row);
-        app.getOperationsCV_metods().create_BoxDelivery(row);
 
-    }
     @Test(priority=1,dataProviderClass = DataProviders.class, dataProvider = "createFileForNewClient")
     public void init(By locatorlanguage, String bookingType, String source, String jobType,
                      String mode, String serviceType, String serviceLevel,

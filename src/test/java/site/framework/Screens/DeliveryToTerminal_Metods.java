@@ -13,11 +13,21 @@ public class DeliveryToTerminal_Metods extends BasisMetods {
         super(wd);
     }
     public void clickOnAddStaff_button() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(DeliveryToTerminal_WebElements.AddStaff_button_StaffGrid);
     }
 
     public void selectStaffFromDropdownInPopup() {
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(DeliveryToTerminal_WebElements.StaffDropdownField);
         click(DeliveryToTerminal_WebElements.StaffElementInStaffDropdown);
     }
@@ -56,10 +66,21 @@ public class DeliveryToTerminal_Metods extends BasisMetods {
 
 
     public void clickOnAddVehicles_button_InVehiclesGrid(){
+        allElemetsInvisibility(By.xpath("//*[@class='k-loading-image']"));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(DeliveryToTerminal_WebElements.AddVehicles_button_VehiclesGrid);
     }
     public void selectVehicleFromDropdownInPopup(){
         waitForElementByVisibility(By.xpath("//*[@class='k-widget k-window k-state-focused']"));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click(DeliveryToTerminal_WebElements.VehiclesDropdownField);
         click(DeliveryToTerminal_WebElements.VehicleElementInStaffDropdown);
 
