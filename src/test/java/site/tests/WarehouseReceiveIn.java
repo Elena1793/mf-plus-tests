@@ -20,7 +20,7 @@ import static site.Data.WebElements.Operation_CV.WarehouseReceiveIn_button;
 public class WarehouseReceiveIn extends TestBase {
 
 
-    @Test(priority=1,dataProviderClass = DataProviders.class, dataProvider = "createFileForNewClient")
+  //  @Test(priority=1,dataProviderClass = DataProviders.class, dataProvider = "createFileForNewClient")
     public void init(By locatorlanguage, String bookingType, String source, String jobType,
                      String mode, String serviceType, String serviceLevel,
                      String firstName, String lastName, String email, String phone,
